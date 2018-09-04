@@ -1,12 +1,8 @@
-VERSION=1.2.1
-PROJECT=thingsboard
-APP=gateway
+PROJECT=gmatheu
+APP=thingsboard-gateway
 
 build:
-	cp ../target/tb-gateway.deb .
-	docker build --pull -t ${PROJECT}/${APP}:${VERSION} -t ${PROJECT}/${APP}:latest .
-	rm tb-gateway.deb
+	docker build --pull -t ${PROJECT}/${APP}:latest .
 
 push: build
-	docker push ${PROJECT}/${APP}:${VERSION}
 	docker push ${PROJECT}/${APP}:latest

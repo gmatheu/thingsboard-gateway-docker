@@ -16,7 +16,12 @@
 
 FROM openjdk:8-jre
 
-ADD run-application.sh /run-application.sh
-ADD tb-gateway.deb /tb-gateway.deb
+ARG GATEWAY_VERSION=1.4.0
+ARG GATEWAY_PATCH_VERSION=.1
 
-RUN chmod +x /run-application.sh
+RUN wget https://github.com/thingsboard/thingsboard-gateway/releases/download/v${GATEWAY_VERSION}${GATEWAY_PATCH_VERSION}/tb-gateway-${GATEWAY_VERSION}.deb \
+  && dpkg -i tb-gateway-${GATEWAY_VERSION}.deb \
+  && rm tb-gateway-${GATEWAY_VERSION}.deb
+ADD run-application.sh /run-application.sh
+
+CMD /run-application.sh
