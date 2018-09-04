@@ -1,2 +1,3 @@
-# thingsboard-gateway-docker
-Thingsboard Gateway docker image
+# Thingsboard Gateway docker image
+
+Extracted from: https://github.com/thingsboard/thingsboard-gateway/tree/60ef596/docker
