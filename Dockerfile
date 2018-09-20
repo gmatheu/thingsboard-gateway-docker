@@ -16,7 +16,7 @@
 
 FROM openjdk:8-jre
 
-RUN wget https://github.com/thingsboard/thingsboard-gateway/releases/download/v2.0.4-draft1/tb-gateway.deb \
+RUN wget https://github.com/thingsboard/thingsboard-gateway/releases/download/2.1.1/tb-gateway.deb \
   && dpkg -i tb-gateway.deb \
   && rm tb-gateway.deb
 ADD run-application.sh /run-application.sh
